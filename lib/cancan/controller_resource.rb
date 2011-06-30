@@ -121,7 +121,7 @@ module CanCan
     end
 
     def id_param
-      @params[parent? ? :"#{name}_id" : :id]
+      BSON::ObjectId(@params[parent? ? :"#{name}_id" : :id])
     end
 
     def member_action?
